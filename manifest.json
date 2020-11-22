@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Data Practices on Web",
+    "description": "Inform young-users about the data privacy/security/usage/analysis/interpretation practices.",
+    "version": "0.1",
+    "icons": {
+        "128": "logo.png"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://*.youtube.com/*"
+        ],
+        "css": [
+            "youtube.css"
+        ],
+        "js": [
+            "js/index.js"
+        ]
+    }],
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_title": "Data Practices on Web",
+        "default_popup": "options.html"
+    },
+    "permissions": [
+        "storage",
+        "*://www.youtube.com/*"
+    ],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js; object-src 'self'"
+}
