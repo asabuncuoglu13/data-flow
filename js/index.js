@@ -1,7 +1,4 @@
-chrome.storage.sync.get(["pages", "blockAds"], function (storage) {
-  Object.keys(storage.pages).map(item => {
-    if (storage.pages[item]) blur(item, "10px");
-  });
+chrome.storage.sync.get(["blockAds"], function (storage) {
   if (storage.blockAds) {
     enableBlockAds();
   }
@@ -12,7 +9,6 @@ var blur = (key, value) => {
     `--blur-value-${key}`,
     `blur(${value})`
   );
-
 };
 
 
