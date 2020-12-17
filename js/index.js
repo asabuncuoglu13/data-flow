@@ -22,16 +22,16 @@ var enableBlockAds = () => {
     }, 200);
 };
 
-var bindPopUpBeforeElement = (_el, _json) => {
+var prepareTagContent = (_json) => {
     var tag = document.createElement("div");
-    tag.innerHTML = "Learn More";
+    tag.innerHTML = _json.question;
     $(function () {
         tag.onclick = function (event) {
             $('<div id="dialog" class="card">\n' +
                 '    <h2 id="title">' + _json.title + '</h2>\n' +
                 '    <i id="detail" class="fas fa-arrow-right"></i>\n' +
                 '    <p id="explanation">' + _json.explanation + '</p>\n' +
-                '    <div class="pic"></div>\n' +
+                '    <div class="pic ' + _json.style + '"></div>\n' +
                 '    <div class="social">\n' +
                 '        <i id="facebook" class="fab fa-facebook-f"></i>\n' +
                 '        <i id="twitter" class="fab fa-twitter"></i>\n' +
@@ -52,28 +52,14 @@ var bindPopUpBeforeElement = (_el, _json) => {
             });
         } //close click
     });
-    tag.style.cssText = "margin: 0 auto; color: white; cursor:pointer;";
-    _el.parentNode.insertBefore(tag, _el);
+    tag.className = "link";
+    return tag;
 }
 
-var bindPopUpAfterElement = (_el, _json, _style) => {
-    var tag = document.createElement("div");
-    tag.innerHTML = convertToHTMLText(_json);
-    tag.style.cssText = _style;
-    var parent = _el.parentNode;
-    parent.insertBefore(tag, _el.nextSibling);
+var bindPopUpBeforeElement = (_el, _json) => {
+    _el.parentNode.insertBefore(prepareTagContent(_json), _el);
 }
 
-var prependPopUpInsideElement = (_el, _json, _style) => {
-    var tag = document.createElement("div");
-    tag.innerHTML = convertToHTMLText(_json);
-    tag.style.cssText = _style;
-    _el.appendChild(tag);
-}
-
-var appendPopUpInsideElement = (_el, _json, _style) => {
-    var tag = document.createElement("div");
-    tag.innerHTML = convertToHTMLText(_json);
-    tag.style.cssText = _style;
-    _el.prepend(tag);
+var bindPopUpInsideElement = (_el, _json) => {
+    _el.innerHTML = prepareTagContent(_json);
 }

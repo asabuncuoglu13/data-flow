@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Data Practices on Web",
-  "description": "Inform young-users about the data privacy/security/usage/analysis/interpretation practices.",
+  "description": "Inform young-users about the data privacy, security, usage, analysis and interpretation practices.",
   "version": "0.1",
   "icons": {
     "128": "logo.png"
@@ -37,5 +37,5 @@
     "storage",
     "*://www.youtube.com/*"
   ],
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://use.fontawesome.com https://fonts.googleapis.com; object-src 'self'"
 }
