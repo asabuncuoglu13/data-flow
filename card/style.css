@@ -23,6 +23,15 @@ i {
     overflow: hidden;
     margin-bottom: 4px;
 }
+.ui-widget.ui-widget-content {
+    z-index: 999;
+}
+
+
+.ui-dialog .ui-dialog-content {
+    background: #00507C;
+    overflow: hidden;
+}
 
 .card h2 {
     z-index: 99;

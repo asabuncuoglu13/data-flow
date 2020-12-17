@@ -13,7 +13,8 @@
       ],
       "css": [
         "youtube.css",
-        "lib/jquery-ui.css"
+        "lib/jquery-ui.css",
+        "card/style.css"
       ],
       "js": [
         "lib/jquery-1.12.4.js",

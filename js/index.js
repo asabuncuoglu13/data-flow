@@ -25,24 +25,34 @@ var enableBlockAds = () => {
 var bindPopUpBeforeElement = (_el, _json) => {
     var tag = document.createElement("div");
     tag.innerHTML = "Learn More";
-    tag.onclick = console.log('<div class="card">\n' +
-        '    <h2 id="title">' + _json.title + '</h2>\n' +
-        '    <ul id="close">\n' +
-        '        <li>x</li>\n' +
-        '    </ul>\n' +
-        '    <i id="detail" class="fas fa-arrow-right"></i>\n' +
-        '    <p id="explanation">' + _json.explanation + '</p>\n' +
-        '    <div class="pic"></div>\n' +
-        '    <div class="social">\n' +
-        '        <i id="facebook" class="fab fa-facebook-f"></i>\n' +
-        '        <i id="twitter" class="fab fa-twitter"></i>\n' +
-        '        <i id="instagram" class="fab fa-instagram"></i>\n' +
-        '        <i id="github" class="fab fa-github"></i>\n' +
-        '    </div>\n' +
-        '    <button>\n' +
-        '    </button>\n' +
-        '</div>');
-    tag.style.cssText = "margin: 0 auto; color: white";
+    $(function () {
+        tag.onclick = function (event) {
+            $('<div id="dialog" class="card">\n' +
+                '    <h2 id="title">' + _json.title + '</h2>\n' +
+                '    <i id="detail" class="fas fa-arrow-right"></i>\n' +
+                '    <p id="explanation">' + _json.explanation + '</p>\n' +
+                '    <div class="pic"></div>\n' +
+                '    <div class="social">\n' +
+                '        <i id="facebook" class="fab fa-facebook-f"></i>\n' +
+                '        <i id="twitter" class="fab fa-twitter"></i>\n' +
+                '        <i id="instagram" class="fab fa-instagram"></i>\n' +
+                '        <i id="github" class="fab fa-github"></i>\n' +
+                '    </div>\n' +
+                '    <button>\n' +
+                '    </button>\n' +
+                '</div>').appendTo('body');
+            event.preventDefault();
+
+            $("#dialog").dialog({
+                width: 600,
+                modal: true,
+                close: function (event, ui) {
+                    $("#dialog").remove();
+                }
+            });
+        } //close click
+    });
+    tag.style.cssText = "margin: 0 auto; color: white; cursor:pointer;";
     _el.parentNode.insertBefore(tag, _el);
 }
 
