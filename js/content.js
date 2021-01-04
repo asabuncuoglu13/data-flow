@@ -32,8 +32,8 @@ var _locationPopUp = {
 
 var _recommendationPopUp = {
   question: "Why do I see this content?",
-  title: "Most Viewed Videos in Your Area (Istanbul)",
-  explanation: "Based on your internet provider (Turk Telekom) info, we know that you are in Istanbul. According to our data scientists, you will be 80% likely to watch these recommended videos similar to your neighbours. this is why you are viewing this content now.",
+  title: "Interest Groups Shapes the Recommendations",
+  explanation: "The algorithm behind this system records the data when you like, watch, or search for content. The system fits your interest data with a similar group to better categorize their content.",
   style:"recommendation",
   detailButton: "./detail/recommendation.html",
 };
@@ -75,8 +75,7 @@ function changeValue(message) {
   addNudgeButtons();
 
   chrome.storage.sync.set({
-    modes: uncheckedModes,
-    blockAds: message.blockAds
+    modes: uncheckedModes
   });
   chrome.runtime.onMessage.removeListener(changeValue);
 }
@@ -86,8 +85,11 @@ var addNudgeButtons = () => {
   // bindPopUpBeforeElement(document.getElementById("contents"), _passwordMonthPopUp);
   // bindPopUpBeforeElement(document.getElementById("contents"), _passwordDayPopUp);
   // bindPopUpBeforeElement(document.getElementById("contents"), _passwordSecondPopUp);
-  bindPopUpBeforeElement(document.getElementById("contents"), _recommendationPopUp);
-  //bindPopUpBeforeElement(document.getElementById("secondary"), _locationPopUp);
+  if (getLoginStatus()){
+    bindPopUpBeforeElement(document.getElementById("contents"), _recommendationPopUp);
+  } else {
+    bindPopUpBeforeElement(document.getElementById("contents"), _locationPopUp);
+  }
   bindPopUpInsideElement(document.getElementById("upnext"), _baitContentPopUp);
   //bindPopUpBeforeElement(document.getElementById("secondary"), _baitAdsPopUp);
 };

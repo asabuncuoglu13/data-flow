@@ -75,30 +75,31 @@ i {
     background-size: 100% 100%;
 }
 
-.card .pic .bait-ads {
+.bait-ads {
     background-image: url("../images/img-bait-ads.png");
 }
 
-.card .pic .bait-content {
+.bait-content {
     background-image: url("../images/img-bait-content.png");
 }
 
-.card .pic .location {
+.location {
     background-image: url("../images/img-location.png");
 }
 
-.card .pic .password-day {
+.password-day {
     background-image: url("../images/img-password-day.png");
 }
 
-.card .pic .password-second {
+.password-second {
     background-image: url("../images/img-password-seccond.png");
 }
 
-.card .pic .password-month {
+.password-month {
     background-image: url("../images/img-password-month.png");
 }
-.card .pic .recommendation {
+
+.recommendation {
     background-image: url("../images/img-recommendation.png");
 }
 

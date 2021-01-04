@@ -4,6 +4,12 @@ chrome.storage.sync.get(["blockAds"], function (storage) {
     }
 });
 
+
+var getLoginStatus = () => {
+    return document.getElementById("avatar-btn") !== null;
+};
+
+
 var blur = (key, value) => {
     document.documentElement.style.setProperty(
         `--blur-value-${key}`,
@@ -54,12 +60,12 @@ var prepareTagContent = (_json) => {
     });
     tag.className = "link";
     return tag;
-}
+};
 
 var bindPopUpBeforeElement = (_el, _json) => {
     _el.parentNode.insertBefore(prepareTagContent(_json), _el);
-}
+};
 
 var bindPopUpInsideElement = (_el, _json) => {
     _el.innerHTML = prepareTagContent(_json);
-}
+};

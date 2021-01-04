@@ -1,6 +1,5 @@
 const applyChanges = () => {
     var modes = document.querySelectorAll(".modes:checked");
-    var blockAds = document.querySelectorAll(".blockAds:checked");
     chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
         let mode = modes[0].value;
         chrome.tabs.executeScript(
@@ -10,8 +9,7 @@ const applyChanges = () => {
             },
             function () {
                 chrome.tabs.sendMessage(tabs[0].id, {
-                    mode: mode,
-                    blockAds: blockAds[0].value === "enable"
+                    mode: mode
                 });
                 setTimeout(() => {
                     window.close();
