@@ -75,16 +75,56 @@ i {
     background-size: 100% 100%;
 }
 
+.location {
+    background-image: url("../images/img-content-location.png");
+}
+
+.recommendation {
+    background-image: url("../images/img-content-lrecommendation.png");
+}
+
+.control-recommendations {
+    background-image: url("../images/img-content-control.png");
+}
+
 .bait-ads {
-    background-image: url("../images/img-bait-ads.png");
+    background-image: url("../images/img-content-ads.png");
 }
 
 .bait-content {
-    background-image: url("../images/img-bait-content.png");
+    background-image: url("../images/img-content-bait.png");
 }
 
-.location {
-    background-image: url("../images/img-location.png");
+.bait-title {
+    background-image: url("../images/img-content-cretor.png");
+}
+
+.bait-title {
+    background-image: url("../images/img-content-cretor.png");
+}
+
+.fake {
+    background-image: url("../images/img-content-fake.png");
+}
+
+.cherry-pick {
+    background-image: url("../images/img-content-cherry-picking.png");
+}
+
+.verification {
+    background-image: url("../images/img-content-valid.png");
+}
+
+.common-sense {
+    background-image: url("../images/img-content-common-sense.png");
+}
+
+.pass-twofactor {
+    background-image: url("../images/img-pass-two-factor.png");
+}
+
+.pass-secure {
+    background-image: url("../images/img-pass-strong.png");
 }
 
 .password-day {
@@ -99,9 +139,22 @@ i {
     background-image: url("../images/img-password-month.png");
 }
 
-.recommendation {
-    background-image: url("../images/img-recommendation.png");
+.watch-history {
+    background-image: url("../images/img-footprint-content.png");
 }
+
+.interaction-history {
+    background-image: url("../images/img-footprint-interaction.png");
+}
+
+.futureself {
+    background-image: url("../images/img-footprint-video.png");
+}
+
+.create-history {
+    background-image: url("../images/img-footprint-upload.png");
+}
+
 
 
 .card ul {

@@ -17,7 +17,6 @@ var blur = (key, value) => {
     );
 };
 
-
 var enableBlockAds = () => {
     setInterval(() => {
         for (const button of document.getElementsByClassName(
